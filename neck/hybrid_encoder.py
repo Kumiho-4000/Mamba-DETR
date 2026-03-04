@@ -3,9 +3,8 @@ import torch
 import torch.nn as nn 
 import torch.nn.functional as F 
 
-from utils import get_activation
+from utils.utils import get_activation
 
-from core import register
 
 
 __all__ = ['HybridEncoder']
@@ -175,8 +174,9 @@ class TransformerEncoder(nn.Module):
 
         return output
 
-
-@register
+#--------------------------------------------
+# HybridEncoder Component
+#--------------------------------------------
 class HybridEncoder(nn.Module):
     def __init__(self,
                  in_channels=[512, 1024, 2048],

@@ -1,11 +1,3 @@
-"""
-reference: 
-https://github.com/facebookresearch/detr/blob/main/models/detr.py
-
-by lyuwenyu
-"""
-
-
 import torch 
 import torch.nn as nn 
 import torch.nn.functional as F 
@@ -15,7 +7,6 @@ import torchvision
 from .box_ops import box_cxcywh_to_xyxy, box_iou, generalized_box_iou
 
 from misc.dist import get_world_size, is_dist_available_and_initialized
-from core import register
 
 
 
