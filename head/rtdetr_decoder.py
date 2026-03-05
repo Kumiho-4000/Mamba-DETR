@@ -10,12 +10,11 @@ import torch.nn as nn
 import torch.nn.functional as F 
 import torch.nn.init as init 
 
-from .denoising import get_contrastive_denoising_training_group
-from .utils import deformable_attention_core_func, get_activation, inverse_sigmoid
-from .utils import bias_init_with_prob
+from utils.denoising import get_contrastive_denoising_training_group
+from utils.utils import deformable_attention_core_func, get_activation, inverse_sigmoid
+from utils.utils import bias_init_with_prob
 
 
-from core import register
 
 
 __all__ = ['RTDETRTransformer']
@@ -278,7 +277,7 @@ class TransformerDecoder(nn.Module):
         return torch.stack(dec_out_bboxes), torch.stack(dec_out_logits)
 
 
-@register
+
 class RTDETRTransformer(nn.Module):
     __share__ = ['num_classes']
     def __init__(self,

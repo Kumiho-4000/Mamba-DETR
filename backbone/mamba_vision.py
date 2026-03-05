@@ -5,12 +5,10 @@ from timm.models.layers import trunc_normal_, DropPath
 
 
 
-from utils.toolkit import *
-from modules import *
+from backbone.toolkit import *
+from backbone.modules import *
 
 
-
-from SSM_head.core import register
 
 
 
@@ -108,7 +106,6 @@ class MambaVisionLayer(nn.Module):
 
 
 
-@register
 class MambaVision(nn.Module):
     """
     MambaVision,
@@ -215,9 +212,9 @@ class MambaVision(nn.Module):
 
     
 
-    def _load_state_dict(self, 
+    def load_state_dict(self, 
                          pretrained, 
                          strict: bool = False):
-        _load_checkpoint(self, 
+        load_checkpoint(self, 
                          pretrained, 
                          strict=strict)
